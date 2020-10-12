@@ -1,0 +1,40 @@
+#first {
+    margin-top: 6%;
+    margin-bottom: 5%;
+    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#first>img {
+    height: 50%;
+}
+
+hr {
+    border: 1px solid #c7c7c7;
+}
+
+#second {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15% 0;
+}
+
+#third>.container {
+    padding: 0 17%;
+}
+
+#third {
+    margin-top: 10%;
+}
+
+#loginError {
+    color: red;
+    margin: 0 auto;
+}
+
+#register {
+    color: #034ea2;
+}

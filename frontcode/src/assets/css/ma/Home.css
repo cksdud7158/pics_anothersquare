@@ -1,0 +1,60 @@
+#first {
+    margin-top: 6%;
+    margin-bottom: 5%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#first>img {
+    height: 100%;
+}
+
+hr {
+    border: 1px solid #c7c7c7;
+}
+
+#second {
+    margin-top: 3%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #33a3dc;
+}
+
+#second>div {
+    height: 94%;
+    overflow: hidden
+}
+
+#second>div>img {
+    width: 100%;
+}
+
+#third {
+    margin-top: 3%;
+    margin-right: 4%;
+}
+
+#third>h1:nth-child(1) {
+    font-size: 1rem;
+    text-align: right;
+}
+
+#third>h1:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: right;
+}
+
+#forth {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+#forth>img {
+    height: 100%;
+}

@@ -1,12 +1,12 @@
 package com.anothersquare.pics;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.anothersquare.pics.domain.Customer;
 
 
 @SpringBootTest
@@ -17,10 +17,11 @@ class PicsApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		List list = new ArrayList<>();
-		list = sqlSession.selectList("CustomerMapper.getCustomer");
+		Customer cs = new Customer();
+		cs = sqlSession.selectOne("CustomerMapper.getCustomer", "11@test.com");
 		
-		System.out.println(list);
+		System.out.println("테스트중입니다.");
+		System.out.println(cs);
 	}
 
 }
