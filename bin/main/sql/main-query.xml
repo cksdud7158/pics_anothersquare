@@ -3,10 +3,6 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="CustomerMapper">
-	<sql id="select-customer">
-		SELECT cust_id,api_id,nickname,gender,job,funnel,email,tel,api_key,img_src
-		FROM customer
-	</sql>
 	
 	<insert id="registerCustomer" parameterType="customer">
 		INSERT INTO customer(api_id,nickname,gender,job,funnel,email,tel,api_key,img_src)
@@ -15,7 +11,9 @@
 	</insert>
 	
 	<select id="getCustomer" parameterType="string" resultType="customer">
-		<include refid="select-customer"/>
+		SELECT email, password, name, gender, contact, address
+		FROM customer
+		where email=#{value}
 	</select>
 	
 	<update id="updateCustomer" parameterType="customer">

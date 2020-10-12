@@ -1,13 +1,12 @@
 <template>
-  <v-app> <Home /> </v-app>
+  <v-app>
+    <router-view />
+  </v-app>
 </template>
 
 <script>
-import Home from "@/views/Home.vue";
-export default {
-  name: "App",
-  components: {
-    Home
-  }
-};
+export default {};
 </script>
+
+<style scoped src="@/assets/css/remove_css.css">
+</style>
