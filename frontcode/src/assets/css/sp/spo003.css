@@ -1,0 +1,8 @@
+.text-xs-center {
+    display: grid;
+    justify-items: center;
+}
+
+#imgBtn {
+    width: 70%;
+}

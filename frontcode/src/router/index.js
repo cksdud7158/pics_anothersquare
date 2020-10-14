@@ -5,6 +5,9 @@ import Ma002 from "@/components/ma/ma002.vue"
 import Me001 from "@/components/me/me001.vue"
 import Se001 from "@/components/se/se001.vue"
 import Fi001 from "@/components/fi/fi001.vue"
+import Pa001 from "@/components/pa/pa001.vue"
+import MapView from "@/views/map.vue"
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -30,6 +33,14 @@ const routes = [{
         path: '/fi001/:stuName',
         name: 'fi001',
         component: Fi001,
+    }, {
+        path: '/pa001',
+        name: 'pa001',
+        component: Pa001,
+    }, {
+        path: '/map/:addr',
+        name: 'map',
+        component: MapView,
     },
 ];
 
