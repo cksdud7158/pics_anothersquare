@@ -1,14 +1,15 @@
 export default {
     data() {
         return {
-            studios: []
+            name: this.$route.params.stuName,
+            studio: []
         }
     },
     mounted() {
         this.$axios
-            .get("http://localhost:7777/studios")
+            .get("http://localhost:7777/studio/" + this.name)
             .then(response => {
-                this.studios = response.data;
+                this.studio = response.data;
                 console.log(response)
             })
             .catch(error => {
@@ -17,6 +18,7 @@ export default {
                 this.errored = true;
             })
             .finally(() => (this.loading = false));
+
     },
     computed: {
         wHeight() {
@@ -25,11 +27,6 @@ export default {
         },
         toAdStudio() {
             return this.$router.push("/");
-        }
-    },
-    methods: {
-        toStudio(name) {
-            this.$router.push("/fi001/" + name);
         }
     },
 }
