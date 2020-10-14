@@ -2,7 +2,8 @@ export default {
     data() {
         return {
             name: this.$route.params.stuName,
-            studio: []
+            studio: [],
+            parkingCheck: true
         }
     },
     mounted() {
@@ -11,6 +12,7 @@ export default {
             .then(response => {
                 this.studio = response.data;
                 console.log(response)
+                sessionStorage.setItem('studio', JSON.stringify(response.data))
             })
             .catch(error => {
                 console.log(error);
@@ -18,15 +20,31 @@ export default {
                 this.errored = true;
             })
             .finally(() => (this.loading = false));
+        if (this.studio.parking == 0) {
+            this.parkingCheck = false
+        } else {
+            this.parkingCheck = true
+        }
+
 
     },
     computed: {
         wHeight() {
             let wHeight = window.innerHeight;
             return wHeight + 'px'
-        },
+        }
+
+
+    },
+    methods: {
         toAdStudio() {
             return this.$router.push("/");
+        },
+        toVR() {
+            return this.$router.push("/");
+        },
+        toReserve() {
+            this.$router.push("/pa001/");
         }
     },
 }
