@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export default {
     data: () => ({
         valid: false,
@@ -36,7 +34,7 @@ export default {
     methods: {
         clickLogin(email, password) {
 
-            axios
+            this.$axios
                 .post("http://localhost:7777/login", {
                     params: {
                         email: email,

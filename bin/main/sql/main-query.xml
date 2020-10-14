@@ -4,26 +4,21 @@
 
 <mapper namespace="CustomerMapper">
 	
-	<insert id="registerCustomer" parameterType="customer">
-		INSERT INTO customer(api_id,nickname,gender,job,funnel,email,tel,api_key,img_src)
-		VALUES ((SELECT api_id FROM loginapi WHERE api_id = #{apiId}),#{nickname}
-				,#{gender},#{job},#{funnel},#{email},#{tel},#{apiKey},#{imgSrc})
-	</insert>
-	
 	<select id="getCustomer" parameterType="string" resultType="customer">
 		SELECT email, password, name, gender, contact, address
 		FROM customer
 		where email=#{value}
 	</select>
 	
-	<update id="updateCustomer" parameterType="customer">
-		UPDATE customer 
-		SET nickname = #{nickname}, job = #{job}, tel = #{tel}, img_src= #{imgSrc}
-		WHERE cust_id = #{custId}
-	</update>
+	<select id="getStudio" parameterType="string" resultType="studio">
+		select name, address, contact, price, parking, light, area, tag1, tag2, tag3, has_device, capacity_people 
+		from studio where name=#{value}
+	</select>
 	
-	<delete id="deleteCustomer" parameterType="int">
-		DELETE FROM customer
-		WHERE cust_id = #{value}
-	</delete>
+	<select id="getStudios" resultType="studio">
+		select *
+		from studio
+	</select>
+	
+	
 </mapper>

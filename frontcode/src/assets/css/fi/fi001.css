@@ -1,0 +1,13 @@
+#adImg {
+    height: 10%;
+    width: 100%;
+}
+
+#first {
+    height: 100%;
+}
+
+#first>img {
+    height: 40%;
+    overflow: hidden;
+}

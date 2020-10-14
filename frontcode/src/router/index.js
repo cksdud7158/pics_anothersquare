@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 import Ma002 from "@/components/ma/ma002.vue"
 import Me001 from "@/components/me/me001.vue"
 import Se001 from "@/components/se/se001.vue"
-
+import Fi001 from "@/components/fi/fi001.vue"
 Vue.use(VueRouter);
 
 const routes = [{
@@ -26,6 +26,10 @@ const routes = [{
         path: '/se001',
         name: 'se001',
         component: Se001,
+    }, {
+        path: '/fi001/:stuName',
+        name: 'fi001',
+        component: Fi001,
     },
 ];
 
