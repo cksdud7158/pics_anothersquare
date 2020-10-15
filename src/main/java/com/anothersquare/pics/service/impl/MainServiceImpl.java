@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.anothersquare.pics.dao.MainDAO;
 import com.anothersquare.pics.domain.Customer;
+import com.anothersquare.pics.domain.Reserve;
 import com.anothersquare.pics.domain.Studio;
 import com.anothersquare.pics.service.MainService;
 
@@ -29,6 +30,11 @@ public class MainServiceImpl implements MainService{
 	@Override
 	public List getStudios() throws Exception {
 		return mainDAO.getStudios();
+	}
+
+	@Override
+	public Reserve getReserve(String name) throws Exception {
+		return mainDAO.getReserve(name);
 	}
 		
 

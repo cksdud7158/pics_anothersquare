@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="CustomerMapper">
+<mapper namespace="MainMapper">
 	
 	<select id="getCustomer" parameterType="string" resultType="customer">
 		SELECT email, password, name, gender, contact, address
@@ -19,6 +19,12 @@
 		select *
 		from studio
 	</select>
+	
+	<select id="getReserve" parameterType="string" resultType="reserve">
+		select * from reserve where name=#{value}
+	</select>
+	
+	
 	
 	
 </mapper>

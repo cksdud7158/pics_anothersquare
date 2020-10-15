@@ -8,6 +8,7 @@ import Fi001 from "@/components/fi/fi001.vue"
 import Pa001 from "@/components/pa/pa001.vue"
 import MapView from "@/views/map.vue"
 
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -42,6 +43,7 @@ const routes = [{
         name: 'map',
         component: MapView,
     },
+
 ];
 
 const router = new VueRouter({

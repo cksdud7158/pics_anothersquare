@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.anothersquare.pics.dao.MainDAO;
 import com.anothersquare.pics.domain.Customer;
+import com.anothersquare.pics.domain.Reserve;
 import com.anothersquare.pics.domain.Studio;
 
 @Repository
@@ -15,7 +16,7 @@ public class MainDAOImpl  implements MainDAO{
 
 	@Autowired
 	private SqlSession session;
-	private final String ns = "CustomerMapper.";
+	private final String ns = "MainMapper.";
 	
 	@Override
 	public Customer loginCustomer(String email) throws Exception {
@@ -30,6 +31,12 @@ public class MainDAOImpl  implements MainDAO{
 	@Override
 	public List getStudios() throws Exception {
 		return session.selectList(ns+"getStudios");
+	}
+
+	@Override
+	public Reserve getReserve(String name) throws Exception {
+		return session.selectOne(ns+"getReserve", name);
+
 	}
 	
 	

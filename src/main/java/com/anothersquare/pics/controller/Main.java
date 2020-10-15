@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.anothersquare.pics.domain.Customer;
+import com.anothersquare.pics.domain.Reserve;
 import com.anothersquare.pics.domain.Studio;
 import com.anothersquare.pics.service.MainService;
 
@@ -65,6 +66,19 @@ public class Main {
 			
 	
 			return new ResponseEntity(list,HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@GetMapping("/reserve/{name}")
+	public ResponseEntity getReserve(@PathVariable String name) {
+		try {
+			Reserve re= mainService.getReserve(name);
+			
+	
+			return new ResponseEntity(re,HttpStatus.OK);
 		
 		} catch (Exception e) {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
