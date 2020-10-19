@@ -1,24 +1,22 @@
 import Spo003 from "@/components/sp/spo003"
-import dropdown from 'vue-dropdowns';
+import Datepicker from "vuejs-datepicker"
+import { ko } from 'vuejs-datepicker/dist/locale'
+
 
 export default {
     components: {
         Spo003,
-        dropdown
+        Datepicker
     },
     data() {
         return {
             studio: [],
-            date: new Date().toISOString().substr(0, 10),
             modal: false,
             time: [],
             reserve: [],
-
-            //dropdown
-            arrayOfObjects: [1, 2, 3, 4, 5, 6, 78, 1, 2, 3, 4, 5, 6, 78, 1, 2, 3, 4, 5, 6, 78, 1, 2, 3, 4, 5, 6, 78, 1, 2, 3, 4, 5, 6, 78, ],
-            object: {
-                name: '시간을 선택해주세요',
-            }
+            ko: ko,
+            dateValue: null,
+            format: "yyyy년 MMMM dd일 D요일",
         }
     },
     mounted() {
@@ -80,7 +78,7 @@ export default {
         },
         methodToRunOnSelect(payload) {
             this.object = payload;
-        }
+        },
 
     }
 

@@ -7,6 +7,8 @@ import Se001 from "@/components/se/se001.vue"
 import Fi001 from "@/components/fi/fi001.vue"
 import Pa001 from "@/components/pa/pa001.vue"
 import MapView from "@/views/map.vue"
+import Test from "@/views/time.vue"
+
 
 
 Vue.use(VueRouter);
@@ -42,6 +44,10 @@ const routes = [{
         path: '/map/:addr',
         name: 'map',
         component: MapView,
+    }, {
+        path: '/test',
+        name: 'test',
+        component: Test,
     },
 
 ];
