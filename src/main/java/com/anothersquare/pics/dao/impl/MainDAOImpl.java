@@ -34,8 +34,8 @@ public class MainDAOImpl  implements MainDAO{
 	}
 
 	@Override
-	public Reserve getReserve(String name) throws Exception {
-		return session.selectOne(ns+"getReserve", name);
+	public Reserve getReserve(Reserve re) throws Exception {
+		return session.selectOne(ns+"getReserve", re);
 
 	}
 	

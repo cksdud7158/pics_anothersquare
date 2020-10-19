@@ -63,7 +63,7 @@ public class Main {
 		try {
 			
 			List list = mainService.getStudios();
-			
+			System.out.println("studios 호출우우우우울~!");
 	
 			return new ResponseEntity(list,HttpStatus.OK);
 		
@@ -72,12 +72,16 @@ public class Main {
 		}
 	}
 	
-	@GetMapping("/reserve/{name}")
-	public ResponseEntity getReserve(@PathVariable String name) {
+	@GetMapping("/reserve/{name}/{date}")
+	public ResponseEntity getReserve(@PathVariable String name,@PathVariable String date) {
 		try {
-			Reserve re= mainService.getReserve(name);
 			
-	
+			Reserve tempRe = new Reserve();
+			tempRe.setName(name);
+			tempRe.setDate(date);
+			Reserve re= mainService.getReserve(tempRe);
+			
+			
 			return new ResponseEntity(re,HttpStatus.OK);
 		
 		} catch (Exception e) {

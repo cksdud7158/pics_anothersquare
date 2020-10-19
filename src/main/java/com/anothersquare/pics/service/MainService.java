@@ -10,5 +10,5 @@ public interface MainService {
 	Customer loginCustomer(String email) throws Exception;
 	Studio getStudio(String name) throws Exception;
 	List getStudios() throws Exception;
-	Reserve getReserve(String name) throws Exception;
+	Reserve getReserve(Reserve re) throws Exception;
 }

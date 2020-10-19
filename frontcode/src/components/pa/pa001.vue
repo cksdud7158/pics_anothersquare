@@ -50,19 +50,38 @@
       </div>
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div>
-        <v-select
-          v-model="e6"
-          :items="reserve"
-          :menu-props="{ maxHeight: '400' }"
-          label="예약 시간대를 선택해주세요"
-          multiple
-        ></v-select>
+        <dropdown
+          class="my-dropdown-toggle"
+          :options="arrayOfObjects"
+          :selected="object"
+          v-on:updateOption="methodToRunOnSelect"
+          :placeholder="'Select an Item'"
+          :closeOnOutsideClick="true"
+        >
+        </dropdown>
+        {{ arrayOfObjects }}
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div>
         <span>장비 대여 신청</span> 없을시 미기재
         <div>선택한 장비 내역이 들어갈 곳</div>
       </div>
+      <select id="test">
+        <option value="1">1222212222</option>
+        <option value="1">112222</option>
+        <option value="1">11222212222</option>
+        <option value="1">11222212222</option>
+        <option value="1">11222212222</option>
+        <option value="1">11222212222</option>
+        <option value="1">1</option>
+        <option value="1">1</option>
+        <option value="1">1</option>
+        <option value="1">1</option>
+        <option value="1">1</option>
+      </select>
+      <form action="" id="test2">
+        <input type="date" />
+      </form>
     </div>
   </div>
 </template>

@@ -20,8 +20,8 @@
 		from studio
 	</select>
 	
-	<select id="getReserve" parameterType="string" resultType="reserve">
-		select * from reserve where name=#{value}
+	<select id="getReserve" parameterType="reserve" resultType="reserve">
+		select * from reserve where name=#{name} and date=#{date}
 	</select>
 	
 	
