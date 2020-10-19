@@ -6,7 +6,7 @@ export default {
     },
     mounted() {
         this.$axios
-            .get("http://localhost:7777/studios")
+            .get("http://3.35.26.65:7777/studios")
             .then(response => {
                 this.studios = response.data;
                 console.log(response)
