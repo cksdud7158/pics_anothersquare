@@ -7,7 +7,10 @@
     />
     <div id="first">
       <!-- <h1>{{ studio.name }}</h1> -->
-      <h1>홍대예셰 뮤직 <br/> 합주실 연습실</h1>
+      <h1>
+        홍대예셰 뮤직 <br />
+        합주실 연습실
+      </h1>
       <p>{{ studio.address }}</p>
       <Spo003 id="spo003" :address="studio.address" />
     </div>
@@ -21,12 +24,14 @@
       ></v-text-field>
       <img src="@/assets/img/pa/pa001_icon_calender.png" />
       <div>
-      <!-- 날짜 선택 -->
-        <datepicker placeholder="날짜를 선택해주세요" v-model="dateValue" :language="ko" :format="format"></datepicker>
+        <!-- 날짜 선택 -->
+        <form action="">
+          <input type="date" v-model="dateInfo" />
+        </form>
       </div>
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div>
-       <!-- 시간 선택 -->
+        <!-- 시간 선택 -->
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div>
@@ -34,10 +39,10 @@
         <div>선택한 장비 내역이 들어갈 곳</div>
       </div>
     </div>
-<p>{{ dateValue }}</p>  </div>
+    <p>{{ dateInfo }}</p>
+  </div>
 </template>
 
-<style scoped src="@/assets/css/remove_css.css">
-</style>
-<script src="@/assets/js/pa/pa001.js"/>
+<style scoped src="@/assets/css/remove_css.css"></style>
+<script src="@/assets/js/pa/pa001.js" />
 <style scoped src="@/assets/css/pa/pa001.css" />

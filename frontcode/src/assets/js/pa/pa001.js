@@ -1,12 +1,8 @@
 import Spo003 from "@/components/sp/spo003"
-import Datepicker from "vuejs-datepicker"
-import { ko } from 'vuejs-datepicker/dist/locale'
-
 
 export default {
     components: {
         Spo003,
-        Datepicker
     },
     data() {
         return {
@@ -14,9 +10,7 @@ export default {
             modal: false,
             time: [],
             reserve: [],
-            ko: ko,
-            dateValue: null,
-            format: "yyyy년 MMMM dd일 D요일",
+            dateInfo: null,
         }
     },
     mounted() {
@@ -38,7 +32,7 @@ export default {
         callScheule() {
 
             this.$axios
-                .get("http://127.0.0.1:7777/reserve/" + this.studio.name + "/" + this.date)
+                .get("http://http://localhost/:7777/reserve/" + this.studio.name + "/" + this.dateInfo)
                 .then(response => {
                     this.reserve = []
                     this.reserve = response.data;
@@ -75,9 +69,6 @@ export default {
                 console.log(this.arrayOfObjects)
 
             }
-        },
-        methodToRunOnSelect(payload) {
-            this.object = payload;
         },
 
     }
