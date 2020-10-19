@@ -33,8 +33,8 @@ public class MainServiceImpl implements MainService{
 	}
 
 	@Override
-	public Reserve getReserve(String name) throws Exception {
-		return mainDAO.getReserve(name);
+	public Reserve getReserve(Reserve re) throws Exception {
+		return mainDAO.getReserve(re);
 	}
 		
 

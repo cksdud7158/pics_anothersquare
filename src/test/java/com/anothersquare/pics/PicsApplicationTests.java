@@ -18,9 +18,6 @@ class PicsApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		Reserve re= sqlSession.selectOne("MainMapper.getReserve","studio1");
-		
-		System.out.println(re);
 	}
 
 }

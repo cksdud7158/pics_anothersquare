@@ -42,3 +42,8 @@
     #second>img {
         width: 40%;
     }
+    
+    #test,
+    #test2 {
+        border: 1px solid black;
+    }
