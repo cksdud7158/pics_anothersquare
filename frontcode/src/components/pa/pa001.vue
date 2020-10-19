@@ -7,7 +7,7 @@
     />
     <div id="first">
       <!-- <h1>{{ studio.name }}</h1> -->
-      <h1>홍대예셰 뮤직 합주실 연습실</h1>
+      <h1>홍대예셰 뮤직 <br/> 합주실 연습실</h1>
       <p>{{ studio.address }}</p>
       <Spo003 id="spo003" :address="studio.address" />
     </div>
@@ -21,73 +21,23 @@
       ></v-text-field>
       <img src="@/assets/img/pa/pa001_icon_calender.png" />
       <div>
-        <v-dialog
-          ref="dialog"
-          v-model="modal"
-          :return-value.sync="date"
-          persistent
-          width="290px"
-        >
-          <template v-slot:activator="{ on }">
-            <v-text-field
-              v-model="date"
-              readonly
-              v-on="on"
-              class="pt-4"
-            ></v-text-field>
-          </template>
-          <v-date-picker v-model="date" scrollable>
-            <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
-            <v-btn
-              text
-              color="primary"
-              @click="$refs.dialog.save(date), callScheule()"
-              >OK</v-btn
-            >
-          </v-date-picker>
-        </v-dialog>
+      <!-- 날짜 선택 -->
+        <datepicker placeholder="날짜를 선택해주세요" v-model="dateValue" :language="ko" :format="format"></datepicker>
       </div>
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div>
-        <dropdown
-          class="my-dropdown-toggle"
-          :options="arrayOfObjects"
-          :selected="object"
-          v-on:updateOption="methodToRunOnSelect"
-          :placeholder="'Select an Item'"
-          :closeOnOutsideClick="true"
-        >
-        </dropdown>
-        {{ arrayOfObjects }}
+       <!-- 시간 선택 -->
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div>
         <span>장비 대여 신청</span> 없을시 미기재
         <div>선택한 장비 내역이 들어갈 곳</div>
       </div>
-      <select id="test">
-        <option value="1">1222212222</option>
-        <option value="1">112222</option>
-        <option value="1">11222212222</option>
-        <option value="1">11222212222</option>
-        <option value="1">11222212222</option>
-        <option value="1">11222212222</option>
-        <option value="1">1</option>
-        <option value="1">1</option>
-        <option value="1">1</option>
-        <option value="1">1</option>
-        <option value="1">1</option>
-      </select>
-      <form action="" id="test2">
-        <input type="date" />
-      </form>
     </div>
-  </div>
+<p>{{ dateValue }}</p>  </div>
 </template>
 
 <style scoped src="@/assets/css/remove_css.css">
 </style>
 <script src="@/assets/js/pa/pa001.js"/>
 <style scoped src="@/assets/css/pa/pa001.css" />
-
