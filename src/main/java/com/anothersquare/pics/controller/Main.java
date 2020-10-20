@@ -62,9 +62,7 @@ public class Main {
 	public ResponseEntity getStudios() {
 		try {
 			
-			List list = mainService.getStudios();
-			System.out.println("studios 호출우우우우울~!");
-	
+			List list = mainService.getStudios();	
 			return new ResponseEntity(list,HttpStatus.OK);
 		
 		} catch (Exception e) {
@@ -75,7 +73,7 @@ public class Main {
 	@GetMapping("/reserve/{name}/{date}")
 	public ResponseEntity getReserve(@PathVariable String name,@PathVariable String date) {
 		try {
-			
+			System.out.println("일 호출우우우우울~!");			
 			Reserve tempRe = new Reserve();
 			tempRe.setName(name);
 			tempRe.setDate(date);

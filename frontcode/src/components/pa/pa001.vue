@@ -25,13 +25,14 @@
       <img src="@/assets/img/pa/pa001_icon_calender.png" />
       <div>
         <!-- 날짜 선택 -->
-        <form action="">
-          <input type="date" v-model="dateInfo" />
-        </form>
+        <input type="date" v-model="dateInfo" :onchange="handler()" />
       </div>
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div>
         <!-- 시간 선택 -->
+        {{ possibleReserve }}
+
+        {{ time }}
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div>
@@ -39,7 +40,6 @@
         <div>선택한 장비 내역이 들어갈 곳</div>
       </div>
     </div>
-    <p>{{ dateInfo }}</p>
   </div>
 </template>
 

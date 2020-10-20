@@ -10,8 +10,18 @@ export default {
             modal: false,
             time: [],
             reserve: [],
-            dateInfo: null,
+            dateInfo: "",
+            event: "",
+            possibleReserve: []
         }
+    },
+    beforeMount() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = ("0" + (1 + date.getMonth())).slice(-2);
+        var day = ("0" + date.getDate()).slice(-2);
+
+        this.dateInfo = year + "-" + month + "-" + day;
     },
     mounted() {
         this.studio = JSON.parse(sessionStorage.getItem('studio'))
@@ -29,10 +39,12 @@ export default {
         toAdStudio() {
             return this.$router.push("/");
         },
+        handler() {
+            this.callScheule()
+        },
         callScheule() {
-
             this.$axios
-                .get("http://http://localhost/:7777/reserve/" + this.studio.name + "/" + this.dateInfo)
+                .get("http://3.35.26.65:7777/reserve/" + this.studio.name + "/" + this.dateInfo)
                 .then(response => {
                     this.reserve = []
                     this.reserve = response.data;
@@ -50,27 +62,20 @@ export default {
                 });
         },
         possibleReserveTime() {
+            for (let i = 0; i < 24; i++) {
+                let j = i + 1
+                this.possibleReserve[i] = i + "시 ~" + " " + j + "시"
+            }
             if (this.reserve.hour != null) {
+                this.possibleReserve = []
                 let times = this.reserve.hour.split(',');
+                console.log(times)
                 for (let i in times) {
-                    let j = Number(i) + 1
-                    this.arrayOfObjects[i - 1] = {
-                        "name": i + "시 -" + " " + j + "시"
-                    }
+                    let j = i + 1
+                    this.possibleReserve[i] = times[i] + "시 ~" + j + "시"
                 }
-                console.log(this.arrayOfObjects)
-            } else {
-                for (let i = 1; i < 24; i++) {
-                    let j = Number(i) + 1
-                    this.arrayOfObjects[i - 1] = {
-                        'name': i + "시 -" + " " + j + "시"
-                    }
-                }
-                console.log(this.arrayOfObjects)
-
             }
         },
-
     }
 
 }

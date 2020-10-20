@@ -49,7 +49,5 @@
   </div>
 </template>
 
-<script src="@/assets/js/me/me001.js">
-</script>
-<style scoped src="@/assets/css/me/me001.css">
-</style>
+<script src="@/assets/js/me/me001.js"></script>
+<style scoped src="@/assets/css/me/me001.css"></style>
