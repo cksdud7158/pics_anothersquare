@@ -30,9 +30,9 @@
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div>
         <!-- 시간 선택 -->
-        {{ possibleReserve }}
-
-        {{ time }}
+        <select v-for="{item, i } in possibleReserve" :key="i">
+          <option value="item">{{item}}</option>
+        </select>
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div>
@@ -40,6 +40,7 @@
         <div>선택한 장비 내역이 들어갈 곳</div>
       </div>
     </div>
+    <div id="temp"><h1>test</h1></div>
   </div>
 </template>
 
