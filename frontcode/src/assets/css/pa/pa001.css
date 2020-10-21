@@ -21,7 +21,7 @@
     
     #first>p {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     
     #spo003 {
@@ -32,7 +32,7 @@
         padding: 3% 5%;
         display: grid;
         grid-template-columns: 2fr 5fr;
-        grid-template-rows: repeat(5, minmax(80px, auto));
+        grid-template-rows: repeat(4, minmax(80px, auto));
         /* row-gap: 5%; */
         align-items: center;
         justify-items: center;
@@ -43,12 +43,37 @@
         width: 40%;
     }
     
-    #test,
-    #test2 {
-        border: 1px solid black;
+    #second>#item {
+        justify-self: start;
     }
     
-    #temp {
-        height: 200px;
-        background-color: red;
+    #second>#item:nth-child(8) {
+        display: grid;
+        justify-items: start;
+    }
+    
+    select {
+        border-bottom: 1px solid black;
+        width: 100px;
+    }
+    
+    #hasDevice {
+        padding-top: 5%;
+    }
+    
+    #third {
+        margin: 0 auto;
+        width: 70%;
+    }
+    
+    #third>img {
+        width: 100%;
+    }
+    
+    #modal {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        height: 100px;
+        font-size: 1.5rem;
     }

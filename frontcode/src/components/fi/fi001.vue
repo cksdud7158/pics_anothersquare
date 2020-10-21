@@ -48,7 +48,7 @@
       </div>
     </div>
     <div id="forth">
-      <img src="@/assets/img/fi/fi001_reserve.png" @click.prevent="toReserve" />
+      <img src="@/assets/img/common/reserve.png" @click.prevent="toReserve" />
     </div>
   </div>
 </template>

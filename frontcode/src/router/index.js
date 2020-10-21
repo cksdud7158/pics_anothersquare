@@ -6,8 +6,9 @@ import Me001 from "@/components/me/me001.vue"
 import Se001 from "@/components/se/se001.vue"
 import Fi001 from "@/components/fi/fi001.vue"
 import Pa001 from "@/components/pa/pa001.vue"
+import Pa002 from "@/components/pa/pa002.vue"
 import MapView from "@/views/map.vue"
-import Test from "@/views/time.vue"
+import Test from "@/views/test.vue"
 
 
 
@@ -48,6 +49,10 @@ const routes = [{
         path: '/test',
         name: 'test',
         component: Test,
+    }, {
+        path: '/pa002',
+        name: 'pa002',
+        component: Pa002,
     },
 
 ];
