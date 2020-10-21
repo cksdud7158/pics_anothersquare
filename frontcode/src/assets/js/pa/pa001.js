@@ -58,7 +58,7 @@ export default {
         },
         callScheule() {
             this.$axios
-                .get("http://localhost:7777/reserve/" + this.studio.name + "/" + this.dateInfo)
+                .get("http://3.35.26.65:7777/reserve/" + this.studio.name + "/" + this.dateInfo)
                 .then(response => {
                     this.reserve = []
                     this.reserve = response.data;
