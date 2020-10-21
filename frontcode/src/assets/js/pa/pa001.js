@@ -8,11 +8,24 @@ export default {
         return {
             studio: [],
             modal: false,
+            peopleNum: '',
             time: [],
             reserve: [],
             dateInfo: "",
             event: "",
             possibleReserve: [],
+            selectedTime: [],
+            hasDevice: [],
+            selectedDevice: [],
+            dialog: false,
+            requireItem: '',
+            paymentInformation: {
+                peopleNum: '',
+                dateInfo: '',
+                selectedTime: '',
+                selectedDevice: ''
+            }
+
         }
     },
     beforeMount() {
@@ -25,6 +38,7 @@ export default {
     },
     mounted() {
         this.studio = JSON.parse(sessionStorage.getItem('studio'))
+        this.hasDevice = this.studio.hasDevice.split(",")
     },
     updated() {
 
@@ -68,13 +82,34 @@ export default {
             if (this.reserve.hour != null) {
                 this.possibleReserve = []
                 let times = this.reserve.hour.split(',');
-                console.log(times)
                 for (let i in times) {
-                    let j = i + 1
+                    let j = Number(i) + 1
                     this.possibleReserve[i] = times[i] + "시 ~" + j + "시"
                 }
             }
+            console.log(this.possibleReserve)
         },
+        toReserve() {
+            if (this.peopleNum == '') {
+                this.requireItem = "인원을 입력해주세요"
+                this.dialog = true
+                return
+            } else if (this.dateInfo == '') {
+                this.requireItem = "날짜를 입력해주세요"
+                this.dialog = true
+                return
+            } else if (this.selectedTime == '') {
+                this.requireItem = "시간을 입력해주세요"
+                this.dialog = true
+                return
+            }
+            this.paymentInformation.peopleNum = this.peopleNum
+            this.paymentInformation.dateInfo = this.dateInfo
+            this.paymentInformation.selectedTime = this.selectedTime
+            this.paymentInformation.selectedDevice = this.selectedDevice
+            sessionStorage.setItem('paymentInformation', JSON.stringify(this.paymentInformation))
+            this.$router.push("/pa002")
+        }
     }
 
 }
