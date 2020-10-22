@@ -5,8 +5,11 @@ import Ma002 from "@/components/ma/ma002.vue"
 import Me001 from "@/components/me/me001.vue"
 import Se001 from "@/components/se/se001.vue"
 import Fi001 from "@/components/fi/fi001.vue"
+import Fi002 from "@/components/fi/fi002.vue"
 import Pa001 from "@/components/pa/pa001.vue"
 import Pa002 from "@/components/pa/pa002.vue"
+import Pa003 from "@/components/pa/pa003.vue"
+import Bo001 from "@/components/bo/bo001.vue"
 import MapView from "@/views/map.vue"
 import Test from "@/views/test.vue"
 
@@ -53,6 +56,18 @@ const routes = [{
         path: '/pa002',
         name: 'pa002',
         component: Pa002,
+    }, {
+        path: '/pa003',
+        name: 'pa003',
+        component: Pa003,
+    }, {
+        path: '/bo001',
+        name: 'bo001',
+        component: Bo001,
+    }, {
+        path: '/fi002',
+        name: 'fi002',
+        component: Fi002,
     },
 
 ];

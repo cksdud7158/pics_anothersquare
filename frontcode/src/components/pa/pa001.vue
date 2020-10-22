@@ -48,12 +48,12 @@
             {{ item }}
           </option>
         </select>
-        {{selectedTime}}
+
       </div>
       <img src="@/assets/img/pa/pa001_icon_tool.png" />
       <div id="item">
         <h1>장비 대여 신청 없을시 미기재</h1>
-        <select v-model="selectedDevice" id="hasDevice">
+        <select v-model="selectedDevice" id="hasDevice" multiple>
           <option v-for="(item, i) in hasDevice" :value="item" :key="i">
             {{ item }}
           </option>

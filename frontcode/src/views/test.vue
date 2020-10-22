@@ -1,63 +1,19 @@
 <template>
-  <v-app id="inspire">
-    <v-container fluid class="pa-0">
-      <v-row align="center">
-        <v-col cols="12" sm="12" md="12">
-          <div class="text-center">
-            <div class="my-2">
-              <v-btn @click="openDialog()" large color="blue" dark>
-                <v-icon class="mr-2">cloud_upload</v-icon>
-                Upload
-              </v-btn>
-            </div>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-dialog v-model="dialog" persistent max-width="900px">
-      <v-card>
-        <v-card-title>
-          <template>
-            <v-icon style="margin-right:10px;" large color="#41B883"
-              >cloud_upload</v-icon
-            >
-            <span class="headline" large>파일 업로드</span>
-          </template>
-          <v-spacer></v-spacer>
-          <v-btn icon @click="closeDialog()">
-            <v-icon>clear</v-icon>
-          </v-btn>
-        </v-card-title>
-        <v-card-text>
-          <v-row>
-            <v-col
-              cols="12"
-              sm="12"
-              md="12"
-              style="position: relative; border:1px solid #41B883; border-style:dashed; "
-            >
-              <h1>테스트 결과</h1>
-            </v-col>
-          </v-row>
-        </v-card-text>
-      </v-card>
-    </v-dialog>
-  </v-app>
+  <v-card class="mx-auto" color="#26c6da" dark max-width="200" height="300" hover>
+    <v-card-title>
+      <v-icon large left>
+        mdi-twitter
+      </v-icon>
+      <span class="title font-weight-light">Twitter</span>
+    </v-card-title>
+
+    <v-card-text class="headline font-weight-bold">
+      "Turns out semicolon-less style is easier and safer in TS because most
+      gotcha edge cases are type inurns out semicolon-less style is easier and
+      safer in TS because most gotcha edge cases are type inurns out
+      semicolon-less style is easier and safer in TS because most gotcha edge
+      cases are type inurns out semicolon-less style is easier and safer in TS
+      because most gotcha edge cases are type invalid as well."
+    </v-card-text>
+  </v-card>
 </template>
-
-<script>
-
-export default {
-  data: () => ({
-    dialog: false
-  }),
-  methods: {
-    openDialog () {
-      this.dialog = true
-    },
-    closeDialog () {
-      this.dialog = false
-    }
-  }
-}
-</script>
