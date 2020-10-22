@@ -40,9 +40,7 @@ export default {
         toAdStudio() {
             return this.$router.push("/");
         },
-        toVR() {
-            return this.$router.push("/");
-        },
+
         toReserve() {
             this.$router.push("/pa001/");
         }

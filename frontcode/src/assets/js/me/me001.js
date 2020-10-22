@@ -35,7 +35,7 @@ export default {
         clickLogin(email, password) {
 
             this.$axios
-                .post("http://localhost:7777/login", {
+                .post("http://3.35.26.65:7777/login", {
                     params: {
                         email: email,
                         password: password

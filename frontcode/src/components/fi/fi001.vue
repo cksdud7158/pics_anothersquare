@@ -36,7 +36,8 @@
           <span> 조명 대여 가능 </span>
         </div>
         <div id="vrBtn">
-          <img src="@/assets/img/fi/fi001_button.png" @click.prevent="toVR" />
+          <a href="https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1">
+          <img src="@/assets/img/fi/fi001_button.png" /></a>
         </div>
         <div class="item">
           <img src="@/assets/img/fi/fi001_icon_place.png" />
@@ -48,7 +49,7 @@
       </div>
     </div>
     <div id="forth">
-      <img src="@/assets/img/common/reserve.png" @click.prevent="toReserve" />
+      <img src="@/assets/img/common/reserve.png" @click.prevent="toReserve"/>
     </div>
   </div>
 </template>

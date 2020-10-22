@@ -80,8 +80,8 @@ hr {
     padding-left: 10px;
 }
 
-#vrBtn>img {
-    width: 30%;
+#vrBtn>a>img {
+    width: 100%;
 }
 
 #forVR {
