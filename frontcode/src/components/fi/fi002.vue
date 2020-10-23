@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div id="container">
     <iframe
+      id="iframe"
       src="https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1"
       frameborder="0"
       allowfullscreen
       allow="xr-spatial-tracking"
     ></iframe>
-    <a href="https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1">test</a>
   </div>
 </template>
 
