@@ -36,8 +36,9 @@
           <span> 조명 대여 가능 </span>
         </div>
         <div id="vrBtn">
-          <a href="https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1">
-          <img src="@/assets/img/fi/fi001_button.png" /></a>
+          <!-- <a href="https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1">
+          <img src="@/assets/img/fi/fi001_button.png" /></a> -->
+          <img src="@/assets/img/fi/fi001_button.png" @click.prevent="toVR" />
         </div>
         <div class="item">
           <img src="@/assets/img/fi/fi001_icon_place.png" />
