@@ -4,8 +4,12 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+    state: {
+        //data 를 넣는다.
+        adStudioName: "줌이미지",
+        ipAddress: "localhost",
+    },
+    mutations: {},
+    actions: {},
+    modules: {},
 });

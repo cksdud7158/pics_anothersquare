@@ -38,7 +38,7 @@
       <img src="@/assets/img/pa/pa001_icon_calender.png" />
       <div id="item">
         <!-- 날짜 선택 -->
-        <input type="date" v-model="dateInfo" :onchange="handler()" />
+        <input type="date" v-model="dateInfo" id="datePicke" />
       </div>
       <img src="@/assets/img/pa/pa001_icon_time.png" />
       <div id="item">

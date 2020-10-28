@@ -3,42 +3,40 @@ export default {
         return {
             name: this.$route.params.stuName,
             studio: [],
-            parkingCheck: true
-        }
+            parkingCheck: true,
+        };
     },
     mounted() {
         this.$axios
-            .get("http://3.35.26.65:7777/studio/" + this.name)
-            .then(response => {
+            .get(
+                "http://" + this.$store.state.ipAddress + ":7777/studio/" + this.name
+            )
+            .then((response) => {
                 this.studio = response.data;
-                console.log(response)
-                sessionStorage.setItem('studio', JSON.stringify(response.data))
+                console.log(response);
+                sessionStorage.setItem("studio", JSON.stringify(response.data));
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
                 this.loginCheck = true;
                 this.errored = true;
             })
             .finally(() => (this.loading = false));
         if (this.studio.parking == 0) {
-            this.parkingCheck = false
+            this.parkingCheck = false;
         } else {
-            this.parkingCheck = true
+            this.parkingCheck = true;
         }
-
-
     },
     computed: {
         wHeight() {
             let wHeight = window.innerHeight;
-            return wHeight + 'px'
-        }
-
-
+            return wHeight + "px";
+        },
     },
     methods: {
         toAdStudio() {
-            return this.$router.push("/");
+            this.$router.push("/fi001/" + this.$store.state.adStudioName);
         },
         toReserve() {
             this.$router.push("/pa001/");
@@ -47,4 +45,4 @@ export default {
             this.$router.push("/fi002/");
         },
     },
-}
+};
