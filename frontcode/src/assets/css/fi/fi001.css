@@ -4,13 +4,14 @@
 }
 
 #first {
-    height: 35%;
+    height: 30%;
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
 
 #first>img {
-    height: 120%;
+    height: 140%;
 }
 
 #tag {
@@ -114,7 +115,7 @@ hr {
 #forth {
     margin: 0 auto;
     width: 70%;
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 #forth>img {

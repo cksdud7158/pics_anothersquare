@@ -1,54 +1,52 @@
 export default {
     data: () => ({
         valid: false,
-        email: '',
+        email: "",
         emailRules: [
-            v => !!v || 'E-mail is required',
-            v => /.+@.+/.test(v) || 'E-mail must be valid',
+            (v) => !!v || "E-mail is required",
+            (v) => /.+@.+/.test(v) || "E-mail must be valid",
         ],
         password: "",
         confirmPassword: "",
         validPassword: "",
         rules: {
-            passwordRules: v => !!v || "Password is required",
-            confirmPasswordRules: v => !!v || "Password is required"
+            passwordRules: (v) => !!v || "Password is required",
+            confirmPasswordRules: (v) => !!v || "Password is required",
         },
         customer: [],
         loginCheck: false,
         user: {
-            user_email: '',
-            user_password: ''
-        }
-
+            user_email: "",
+            user_password: "",
+        },
     }),
     computed: {
         wHeight() {
             let wHeight = window.innerHeight;
-            return wHeight + 'px'
+            return wHeight + "px";
         },
         divHeight() {
             let divHeight = window.innerHeight;
-            return divHeight / 10 + 'px'
-        }
+            return divHeight / 10 + "px";
+        },
     },
     methods: {
         clickLogin(email, password) {
-
             this.$axios
-                .post("http://3.35.26.65:7777/login", {
+                .post("http://" + this.$store.state.ipAddress + ":7777/studio/login", {
                     params: {
                         email: email,
-                        password: password
+                        password: password,
                     },
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
+                        "Content-Type": "application/json",
+                    },
                 })
-                .then(response => {
+                .then((response) => {
                     this.customer = response.data;
-                    console.log(response)
+                    console.log(response);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.log(error);
                     this.loginCheck = true;
                     this.errored = true;
@@ -56,9 +54,8 @@ export default {
                 .finally(() => (this.loading = false));
 
             if (password != this.customer.password) {
-                this.loginCheck = true
+                this.loginCheck = true;
             }
-
-        }
+        },
     },
-}
+};

@@ -1,19 +1,40 @@
 <template>
-  <v-card class="mx-auto" color="#26c6da" dark max-width="200" height="300" hover>
-    <v-card-title>
-      <v-icon large left>
-        mdi-twitter
-      </v-icon>
-      <span class="title font-weight-light">Twitter</span>
-    </v-card-title>
+  <v-form>
+    <v-container>
+      <v-layout row wrap>
 
-    <v-card-text class="headline font-weight-bold">
-      "Turns out semicolon-less style is easier and safer in TS because most
-      gotcha edge cases are type inurns out semicolon-less style is easier and
-      safer in TS because most gotcha edge cases are type inurns out
-      semicolon-less style is easier and safer in TS because most gotcha edge
-      cases are type inurns out semicolon-less style is easier and safer in TS
-      because most gotcha edge cases are type invalid as well."
-    </v-card-text>
-  </v-card>
+        <v-flex xs12 sm6>
+          <v-text-field
+            label="Regular"
+            single-line
+          ></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 sm6>
+          <v-text-field
+            label="Solo"
+            single-line
+            solo
+          ></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 sm6>
+          <v-text-field
+            label="Box"
+            single-line
+            box
+          ></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 sm6>
+          <v-text-field
+            label="Outline"
+            single-line
+            outline
+          ></v-text-field>
+        </v-flex>
+
+      </v-layout>
+    </v-container>
+  </v-form>
 </template>

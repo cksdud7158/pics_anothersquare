@@ -1,0 +1,77 @@
+#banner {
+    height: 11%;
+    background-color: #034ea2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner>div>p {
+    text-align: center;
+    color: aliceblue;
+}
+
+#banner>div>p:nth-child(1) {
+    font-size: 1.1rem;
+}
+
+#banner>div>p:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#search {
+    height: 10%;
+    padding: 0 5%;
+    margin-top: 5%;
+}
+
+hr {
+    border: 1px solid #c7c7c7;
+}
+
+#first {
+    padding: 0 5%;
+    padding-top: 3%;
+}
+
+#first>div>img {
+    width: 35px;
+}
+
+#first>p {
+    padding-bottom: 2%;
+}
+
+#item {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    padding-bottom: 4%;
+}
+
+#calender {
+    display: grid;
+    grid-template-columns: 3.2fr 0.3fr 3.2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#datePicke {
+    width: 90%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#selectId {
+    border: 1px solid black;
+    height: 50%;
+    width: 100%;
+}
