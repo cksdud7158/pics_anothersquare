@@ -17,6 +17,7 @@
         :rules="[rules.passwordRules]"
         type="password"
         required
+        @keyup.enter="loginEnter(email, password)"
       >
       </v-text-field>
     </div>
@@ -39,7 +40,14 @@
             </v-btn>
             <br />
             <br />
-            <v-btn id="register" x-large color="white" dark min-width="100%">
+            <v-btn
+              id="register"
+              x-large
+              color="white"
+              dark
+              min-width="100%"
+              @click.prevent="register"
+            >
               회원가입할래요
             </v-btn>
           </v-col>

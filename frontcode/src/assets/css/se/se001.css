@@ -71,7 +71,56 @@ hr {
 }
 
 #selectId {
-    border: 1px solid black;
+    border: 1px solid #c7c7c7;
     height: 50%;
     width: 100%;
+}
+
+#place {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+}
+
+#place>#text {
+    width: 90%;
+}
+
+#text>input {
+    border: 1px solid #c7c7c7;
+    width: 65%;
+}
+
+#text:nth-child(2) {
+    grid-row: 2/3;
+}
+
+#place>img {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width: 90px;
+}
+
+#price {
+    display: flex;
+}
+
+#price>#text>input {
+    width: 60%;
+}
+
+#people {}
+
+#people>input {
+    width: 40%;
+    border: 1px solid #c7c7c7;
+    margin: 0 2%;
+}
+
+textarea {
+    border: 1px solid #c7c7c7;
+}
+
+p {
+    font-weight: 600;
 }

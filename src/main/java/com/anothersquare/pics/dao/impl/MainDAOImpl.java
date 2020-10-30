@@ -38,6 +38,11 @@ public class MainDAOImpl  implements MainDAO{
 		return session.selectOne(ns+"getReserve", re);
 
 	}
+
+	@Override
+	public List getAllReserve() throws Exception {
+		return session.selectList(ns+"getAllReserve");
+	}
 	
 	
 	

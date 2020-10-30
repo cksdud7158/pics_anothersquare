@@ -62,7 +62,7 @@ public class Main {
 	public ResponseEntity getStudios() {
 		try {
 			
-			List list = mainService.getStudios();	
+			List list = mainService.getStudios();
 			return new ResponseEntity(list,HttpStatus.OK);
 		
 		} catch (Exception e) {
@@ -86,5 +86,19 @@ public class Main {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@GetMapping("/allReserve")
+	public ResponseEntity getAllReserve() {
+		try {
+			
+			List list = mainService.getAllReserve();
+			
+			return new ResponseEntity(list,HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 	
 }

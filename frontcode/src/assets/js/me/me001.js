@@ -13,13 +13,16 @@ export default {
             passwordRules: (v) => !!v || "Password is required",
             confirmPasswordRules: (v) => !!v || "Password is required",
         },
-        customer: [],
+        customer: "",
         loginCheck: false,
         user: {
             user_email: "",
             user_password: "",
         },
     }),
+    mounted() {
+        this.loginCheckMethood();
+    },
     computed: {
         wHeight() {
             let wHeight = window.innerHeight;
@@ -31,9 +34,12 @@ export default {
         },
     },
     methods: {
+        loginEnter(email, password) {
+            this.clickLogin(email, password);
+        },
         clickLogin(email, password) {
             this.$axios
-                .post("http://" + this.$store.state.ipAddress + ":7777/studio/login", {
+                .post("http://" + this.$store.state.ipAddress + ":7777/login", {
                     params: {
                         email: email,
                         password: password,
@@ -48,13 +54,34 @@ export default {
                 })
                 .catch((error) => {
                     console.log(error);
-                    this.loginCheck = true;
                     this.errored = true;
                 })
-                .finally(() => (this.loading = false));
-
-            if (password != this.customer.password) {
+                .finally(() => {
+                    this.userConfirm();
+                    this.loading = false;
+                });
+        },
+        userConfirm() {
+            if (this.customer.email == "") {
                 this.loginCheck = true;
+            } else if (this.customer.email != this.email) {
+                this.loginCheck = true;
+            } else {
+                if (this.password != this.customer.password) {
+                    this.loginCheck = true;
+                } else {
+                    this.$store.commit("addUser", this.customer);
+                    this.$router.push("/me005");
+                }
+            }
+        },
+        register() {
+            this.$router.push("/me002");
+        },
+        loginCheckMethood() {
+            console.log(this.$store.state.loginCheck);
+            if (this.$store.state.loginCheck == true) {
+                this.$router.push("/me005");
             }
         },
     },

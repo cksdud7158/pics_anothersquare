@@ -1,0 +1,27 @@
+#item:nth-child(1) {
+    width: 100%;
+}
+
+#first {
+    padding: 0 5%;
+}
+
+#checkBox {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+hr {
+    border: 1px solid #c7c7c7;
+    margin-top: 5%;
+}
+
+#bbox {
+    display: flex;
+    margin-top: 5%;
+}
+
+#last {
+    width: 50%;
+    margin: 0 auto;
+}
