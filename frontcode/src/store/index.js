@@ -8,8 +8,15 @@ export default new Vuex.Store({
         //data 를 넣는다.
         adStudioName: "줌이미지",
         ipAddress: "localhost",
+        user: "",
+        loginCheck: false,
     },
-    mutations: {},
+    mutations: {
+        addUser: (state, payload) => {
+            state.loginCheck = true;
+            state.user = payload;
+        },
+    },
     actions: {},
     modules: {},
 });

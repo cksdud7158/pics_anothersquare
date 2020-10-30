@@ -36,6 +36,11 @@ public class MainServiceImpl implements MainService{
 	public Reserve getReserve(Reserve re) throws Exception {
 		return mainDAO.getReserve(re);
 	}
+
+	@Override
+	public List getAllReserve() throws Exception {
+		return mainDAO.getAllReserve();
+	}
 		
 
 

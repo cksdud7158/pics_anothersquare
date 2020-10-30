@@ -24,6 +24,9 @@
 		select * from reserve where name=#{name} and date=#{date}
 	</select>
 	
+	<select id="getAllReserve" parameterType="reserve" resultType="reserve">
+		select * from reserve
+	</select>
 	
 	
 	

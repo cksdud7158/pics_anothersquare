@@ -1,7 +1,5 @@
 export default {
     data: () => ({
-        reserveDate1: "",
-        reserveDate2: "",
         citys: [{
             city: "서울특별시",
             district: [
@@ -277,9 +275,23 @@ export default {
             city: "제주특별차치도",
             district: ["제주시", "서귀포시"],
         }, ],
+
         selectCity: "",
         selectDistrict: "",
-        item: "",
+        condition: {
+            searchWord: "",
+            reserveDate1: "",
+            reserveDate2: "",
+            city: "",
+            district: "",
+            area1: "",
+            area2: "",
+            price1: "",
+            price2: "",
+            clickOutdoorStatus: false,
+            peopleNum: "",
+            hashTag: "",
+        },
     }),
     mounted() {
         this.reserveDate1 = this.getToday;
@@ -310,5 +322,23 @@ export default {
             return year + "-" + month + "-" + day;
         },
     },
-    methods: {},
+    methods: {
+        clickOutdoor() {
+            this.condition.clickOutdoorStatus = !this.condition.clickOutdoorStatus;
+            console.log(this.condition.clickOutdoorStatus);
+        },
+        search() {
+            this.toSearch();
+        },
+        enterClicked() {
+            this.toSearch();
+        },
+        toSearch() {
+            this.condition.city = this.selectCity.city;
+            this.condition.district = this.selectDistrict;
+            sessionStorage.removeItem("condition");
+            sessionStorage.setItem("condition", JSON.stringify(this.condition));
+            this.$router.push("/se002");
+        },
+    },
 };
