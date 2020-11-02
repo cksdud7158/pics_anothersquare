@@ -3,7 +3,20 @@ export default {
         return {
             checkbox1: false,
             checkbox2: false,
-            checkbox: false,
+            email: "",
+            emailRules: {
+                required: (v) => !!v || "E-mail is required",
+                form: (v) => /.+@.+/.test(v) || "E-mail must be valid",
+            },
+            password: "",
+            show1: false,
+            rules: {
+                required: (value) => !!value || "Required.",
+                min: (v) => v.length >= 8 || "Min 8 characters",
+            },
+            name: "",
+            contact: "",
+            allCheck: false,
         };
     },
     computed: {
@@ -12,5 +25,14 @@ export default {
             return wHeight + "px";
         },
     },
-    methods: {},
+    methods: {
+        checkDuplicate(val) {
+            // write your api call and return the below statement if it already exist
+            if (val == "test") {
+                return `Name "${val}" already exist`;
+            } else {
+                return true;
+            }
+        },
+    },
 };

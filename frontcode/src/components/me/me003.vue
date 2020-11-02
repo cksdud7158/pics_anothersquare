@@ -4,50 +4,64 @@
     <hr />
     <div id="first">
       <div id="email">
-        <div>
-          <p>ID: E-Mail</p>
-          <p v-if="false">중복되었거나, 잘못된 이메일 주소입니다.</p>
-        </div>
-        <div>
-          <input type="text" id="textEmail" />
-          <input type="button" value="중복확인" id="checkDup" />
-        </div>
+        <v-text-field
+          v-model="email"
+          :rules="[checkDuplicate, emailRules.required, emailRules.form]"
+          label="E-mail"
+        ></v-text-field>
       </div>
       <div id="password">
-        <p>PW: 영문 + 숫자 5~10 자리 내외</p>
-        <input type="text" />
-        <input type="text" />
-        <p>다시입력해주세요</p>
+        <v-text-field
+          v-model="password"
+          :type="show1 ? 'text' : 'password'"
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          label="password"
+          counter="10"
+          @click:append="show1 = !show1"
+          :rules="[rules.required, rules.min]"
+          hint="At least 8 characters"
+        ></v-text-field>
       </div>
-      <div id="nameGender">
-        <div id="name">
-          <p>이름</p>
-          <input type="text" />
-        </div>
-        <div>
-          <p>성별</p>
-          <div id="gender">
-            <v-checkbox
-              v-model="checkbox1"
-              color="primary"
-              hide-details
-              id="temp"
-              ><template v-slot:label>
-                <div style="font-size:1rem; margin-right:5px">
-                  남자
-                </div>
-              </template></v-checkbox
-            >
-            <v-checkbox v-model="checkbox2" color="primary" hide-details
-              ><template v-slot:label>
-                <div style="font-size:1rem; margin-right:5px">
-                  여자
-                </div>
-              </template></v-checkbox
-            >
-          </div>
+      <div id="name">
+        <v-text-field
+          v-model="name"
+          :rules="[checkDuplicate, emailRules.required, emailRules.form]"
+          label="name"
+          counter
+        ></v-text-field>
+      </div>
+      <div id="contact">
+        <v-text-field
+          v-model="contact"
+          label="contact"
+          counter
+          append-icon="mdi-cellphone"
+        ></v-text-field>
+      </div>
+      <div id="gender">
+        <p>성별</p>
+        <div id="checkbox">
+          <v-checkbox v-model="checkbox1" color="primary" hide-details id="temp"
+            ><template v-slot:label>
+              <div style="font-size:1rem; margin-right:5px">
+                남자
+              </div>
+            </template></v-checkbox
+          >
+          <v-checkbox v-model="checkbox2" color="primary" hide-details
+            ><template v-slot:label>
+              <div style="font-size:1rem; margin-right:5px">
+                여자
+              </div>
+            </template></v-checkbox
+          >
         </div>
       </div>
+    </div>
+    <hr />
+    <div id="next">
+      <img src="@/assets/img/me/me003_1.png" v-show="allCheck" />
+      <img src="@/assets/img/me/me003_2.png" v-show="!allCheck" />
     </div>
   </div>
 </template>
