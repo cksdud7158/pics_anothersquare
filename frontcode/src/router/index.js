@@ -7,6 +7,8 @@ import Me002 from "@/components/me/me002.vue";
 import Me003 from "@/components/me/me003.vue";
 import Me004 from "@/components/me/me004.vue";
 import Me005 from "@/components/me/me005.vue";
+import Me006 from "@/components/me/me006.vue";
+import Me007 from "@/components/me/me007.vue";
 import Se001 from "@/components/se/se001.vue";
 import Se002 from "@/components/se/se002.vue";
 import Fi001 from "@/components/fi/fi001.vue";
@@ -15,6 +17,9 @@ import Pa001 from "@/components/pa/pa001.vue";
 import Pa002 from "@/components/pa/pa002.vue";
 import Pa003 from "@/components/pa/pa003.vue";
 import Bo001 from "@/components/bo/bo001.vue";
+import Bo002 from "@/components/bo/bo002.vue";
+import Bo003 from "@/components/bo/bo003.vue";
+
 import MapView from "@/views/map.vue";
 import Test from "@/views/test.vue";
 
@@ -49,6 +54,14 @@ const routes = [{
     name: "me005",
     component: Me005,
 }, {
+    path: "/me006",
+    name: "me006",
+    component: Me006,
+}, {
+    path: "/me007",
+    name: "me007",
+    component: Me007,
+}, {
     path: "/se001",
     name: "se001",
     component: Se001,
@@ -80,6 +93,14 @@ const routes = [{
     path: "/bo001",
     name: "bo001",
     component: Bo001,
+}, {
+    path: "/bo002",
+    name: "bo002",
+    component: Bo002,
+}, {
+    path: "/bo003",
+    name: "bo003",
+    component: Bo003,
 }, {
     path: "/fi002",
     name: "fi002",

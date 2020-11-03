@@ -28,6 +28,11 @@
 		select * from reserve
 	</select>
 	
+	<insert id="registerCustomer" parameterType="customer">							
+		INSERT INTO customer(`email`, `password`, `name`, `gender`, `contact`) 
+		VALUES (#{email},#{password} , #{name}, #{gender}, #{contact});
+	</insert>
+	
 	
 	
 </mapper>

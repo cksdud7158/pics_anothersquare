@@ -23,12 +23,7 @@
         ></v-text-field>
       </div>
       <div id="name">
-        <v-text-field
-          v-model="name"
-          :rules="[checkDuplicate, emailRules.required, emailRules.form]"
-          label="name"
-          counter
-        ></v-text-field>
+        <v-text-field v-model="name" label="name" counter></v-text-field>
       </div>
       <div id="contact">
         <v-text-field
@@ -60,7 +55,11 @@
     </div>
     <hr />
     <div id="next">
-      <img src="@/assets/img/me/me003_1.png" v-show="allCheck" />
+      <img
+        src="@/assets/img/me/me003_1.png"
+        v-show="allCheck"
+        @click.prevent="next"
+      />
       <img src="@/assets/img/me/me003_2.png" v-show="!allCheck" />
     </div>
   </div>

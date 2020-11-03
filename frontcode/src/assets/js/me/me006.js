@@ -11,12 +11,5 @@ export default {
             return wHeight + "px";
         },
     },
-    methods: {
-        next1() {
-            this.$router.push("/bo001");
-        },
-        next2() {
-            this.$router.push("/me006");
-        },
-    },
+    methods: {},
 };

@@ -19,6 +19,17 @@ export default {
             allCheck: false,
         };
     },
+    updated() {
+        if (
+            this.email != "" &&
+            this.password != "" &&
+            this.name != "" &&
+            this.contact != "" &&
+            (this.checkbox1 == true || this.checkbox2 == true)
+        ) {
+            this.allCheck = true;
+        }
+    },
     computed: {
         wHeight() {
             let wHeight = window.innerHeight;
@@ -33,6 +44,38 @@ export default {
             } else {
                 return true;
             }
+        },
+        next() {
+            var registerInfo = {};
+            registerInfo.email = this.email;
+            registerInfo.name = this.name;
+            registerInfo.password = this.password;
+            registerInfo.contact = this.contact;
+            if (this.checkbox1 == true) {
+                registerInfo.gender = "M";
+            } else {
+                registerInfo.gender = "W";
+            }
+            this.$axios
+                .post("http://" + this.$store.state.ipAddress + ":7777/register", {
+                    params: {
+                        registerInfo: registerInfo,
+                    },
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    this.$router.push("/me004");
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    this.errored = true;
+                })
+                .finally(() => {
+                    this.loading = false;
+                });
         },
     },
 };

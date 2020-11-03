@@ -14,7 +14,7 @@ hr {
 }
 
 #first {
-    padding: 0 5%;
+    padding: 0 15%;
     margin-top: 15%;
     margin-bottom: 10%;
 }
@@ -22,17 +22,17 @@ hr {
 #email {
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 #password {
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 #name {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 #gender {

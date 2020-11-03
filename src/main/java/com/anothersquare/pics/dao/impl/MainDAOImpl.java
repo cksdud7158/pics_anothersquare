@@ -43,6 +43,11 @@ public class MainDAOImpl  implements MainDAO{
 	public List getAllReserve() throws Exception {
 		return session.selectList(ns+"getAllReserve");
 	}
+
+	@Override
+	public int registerCustomer(Customer cs) throws Exception {
+		return session.insert(ns+"registerCustomer", cs);
+	}
 	
 	
 	

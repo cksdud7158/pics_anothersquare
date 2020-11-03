@@ -100,5 +100,27 @@ public class Main {
 		}
 	}
 	
+	@PostMapping("/register")
+	public ResponseEntity registerUser(@RequestBody Map<String, Object> map) {
+		try {
+			
+			Map<String, Object> params = (Map<String, Object>) map.get("params");
+			
+			Map<String, Object> customer = (Map<String, Object>) params.get("registerInfo");
+			
+			Customer cs = new Customer();
+			cs.setEmail((String) customer.get("email"));
+			cs.setPassword((String) customer.get("password"));
+			cs.setName((String) customer.get("name"));
+			cs.setContact((String) customer.get("contact"));
+			cs.setGender((String) customer.get("gender"));
+			
+			mainService.registerCustomer(cs);			
 	
+			return new ResponseEntity(HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
 }
