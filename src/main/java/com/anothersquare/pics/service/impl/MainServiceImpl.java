@@ -41,6 +41,11 @@ public class MainServiceImpl implements MainService{
 	public List getAllReserve() throws Exception {
 		return mainDAO.getAllReserve();
 	}
+
+	@Override
+	public int registerCustomer(Customer cs) throws Exception {
+		return mainDAO.registerCustomer(cs);
+	}
 		
 
 

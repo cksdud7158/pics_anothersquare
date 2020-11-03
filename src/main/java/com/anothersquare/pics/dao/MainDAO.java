@@ -12,5 +12,7 @@ public interface MainDAO {
 	List getStudios() throws Exception;
 	Reserve getReserve(Reserve re) throws Exception;
 	List getAllReserve() throws Exception;
+	int registerCustomer(Customer cs) throws Exception;
+
 
 }
