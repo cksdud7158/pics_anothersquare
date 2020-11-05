@@ -6,17 +6,30 @@ public class Reserve {
 	private String name;
 	private String email;
 	private String price;
+	private String address;
+	private String contact;
+	private int peopleNum;
+	private String device;
+	private String review;
+	private int rating;
 	
 	public Reserve() {
 	}
 
-	public Reserve(String hour, String date, String name, String email, String price) {
+	public Reserve(String hour, String date, String name, String email, String price, String address, String contact,
+			int peopleNum, String device, String review, int rating) {
 		super();
 		this.hour = hour;
 		this.date = date;
 		this.name = name;
 		this.email = email;
 		this.price = price;
+		this.address = address;
+		this.contact = contact;
+		this.peopleNum = peopleNum;
+		this.device = device;
+		this.review = review;
+		this.rating = rating;
 	}
 
 	public String getHour() {
@@ -59,13 +72,62 @@ public class Reserve {
 		this.price = price;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public int getPeopleNum() {
+		return peopleNum;
+	}
+
+	public void setPeopleNum(int peopleNum) {
+		this.peopleNum = peopleNum;
+	}
+
+	public String getDevice() {
+		return device;
+	}
+
+	public void setDevice(String device) {
+		this.device = device;
+	}
+
+	public String getReview() {
+		return review;
+	}
+
+	public void setReview(String review) {
+		this.review = review;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 	@Override
 	public String toString() {
 		return "Reserve [hour=" + hour + ", date=" + date + ", name=" + name + ", email=" + email + ", price=" + price
-				+ "]";
+				+ ", address=" + address + ", contact=" + contact + ", peopleNum=" + peopleNum + ", device=" + device
+				+ ", review=" + review + ", rating=" + rating + "]";
 	}
 
 	
 	
-	
+
 }

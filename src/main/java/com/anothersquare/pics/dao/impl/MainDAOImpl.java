@@ -48,6 +48,16 @@ public class MainDAOImpl  implements MainDAO{
 	public int registerCustomer(Customer cs) throws Exception {
 		return session.insert(ns+"registerCustomer", cs);
 	}
+
+	@Override
+	public int deleteReserve(Reserve re) throws Exception {
+		return session.delete(ns+"deleteReserve", re);
+	}
+
+	@Override
+	public int registerReview(Reserve re) throws Exception {
+		return session.update(ns+"registerReview", re);
+	}
 	
 	
 	

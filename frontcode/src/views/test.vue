@@ -1,34 +1,25 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
-      <v-text-field
-        v-model="name"
-        :counter="10"
-        :rules="[checkDuplicate, rules.required]"
-        label="Name"
-        required
-      ></v-text-field>
-    </v-app>
+    <div class="popup"></div>
   </div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    name: "",
-    rules: {
-      required: (v) => !!v || "this field is required",
-    },
-  }),
-  methods: {
-    checkDuplicate(val) {
-      // write your api call and return the below statement if it already exist
-      if (val == "test") {
-        return `Name "${val}" already exist`;
-      } else {
-        return true;
-      }
-    },
-  },
-};
+export default {};
 </script>
+
+<style scoped>
+.popup {
+  width: 500px;
+  height: 500px;
+  background: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* 방법1 : margin-left:-너비/2 margin-top:-높이/
+  2 *
+  /* margin-left:-250px; margin-top:-250px; */
+  transform: translate(-50%, -50%);
+}
+</style>
