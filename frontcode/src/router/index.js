@@ -19,6 +19,7 @@ import Pa003 from "@/components/pa/pa003.vue";
 import Bo001 from "@/components/bo/bo001.vue";
 import Bo002 from "@/components/bo/bo002.vue";
 import Bo003 from "@/components/bo/bo003.vue";
+import Da001 from "@/views/da001.vue";
 
 import MapView from "@/views/map.vue";
 import Test from "@/views/test.vue";
@@ -26,7 +27,7 @@ import Test from "@/views/test.vue";
 Vue.use(VueRouter);
 
 const routes = [{
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
 }, {
@@ -109,6 +110,10 @@ const routes = [{
     path: "/se002",
     name: "se002",
     component: Se002,
+}, {
+    path: "/",
+    name: "da001",
+    component: Da001,
 }, ];
 
 const router = new VueRouter({

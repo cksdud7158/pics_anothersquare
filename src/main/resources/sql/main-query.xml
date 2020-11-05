@@ -33,6 +33,12 @@
 		VALUES (#{email},#{password} , #{name}, #{gender}, #{contact});
 	</insert>
 	
+	<delete id="deleteReserve" parameterType="reserve">
+		DELETE FROM reserve WHERE name=#{name} and date=#{date};
+	</delete>
 	
+	<update id="registerReview" parameterType="reserve">
+	UPDATE reserve SET review = #{review}, rating=#{rating} WHERE name = #{name} and date=#{date};
+	</update>
 	
 </mapper>

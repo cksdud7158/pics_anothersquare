@@ -5,6 +5,10 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+};
 </script>
 <style scoped src="@/assets/css/remove_css.css"></style>

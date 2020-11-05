@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -116,6 +118,47 @@ public class Main {
 			cs.setGender((String) customer.get("gender"));
 			
 			mainService.registerCustomer(cs);			
+	
+			return new ResponseEntity(HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@DeleteMapping("/reserveDelete/{name}/{date}")
+	public ResponseEntity deleteReserve(@PathVariable String name, @PathVariable String date) {
+		try {
+			
+			Reserve re = new Reserve();
+			re.setName(name);
+			re.setDate(date);
+			
+			mainService.deleteReserve(re);
+			
+			return new ResponseEntity(HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PatchMapping("/registerReview")
+	public ResponseEntity registerReview(@RequestBody Map<String, Object> map) {
+		try {
+			
+			Map<String, Object> params = (Map<String, Object>) map.get("params");
+			
+			Map<String, Object> studioInfo = (Map<String, Object>) params.get("studioInfo");
+			
+			Reserve re = new Reserve();
+			re.setDate((String) studioInfo.get("date"));
+			re.setName((String)studioInfo.get("name"));
+			re.setRating((int)studioInfo.get("rating"));
+			re.setReview((String)studioInfo.get("review"));
+			
+			
+			mainService.registerReview(re);			
 	
 			return new ResponseEntity(HttpStatus.OK);
 		

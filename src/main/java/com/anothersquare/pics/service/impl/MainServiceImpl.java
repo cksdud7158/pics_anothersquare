@@ -46,6 +46,16 @@ public class MainServiceImpl implements MainService{
 	public int registerCustomer(Customer cs) throws Exception {
 		return mainDAO.registerCustomer(cs);
 	}
+
+	@Override
+	public int deleteReserve(Reserve re) throws Exception {
+		return mainDAO.deleteReserve(re);
+	}
+
+	@Override
+	public int registerReview(Reserve re) throws Exception {
+		return mainDAO.registerReview(re);
+	}
 		
 
 

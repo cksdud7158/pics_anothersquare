@@ -1,0 +1,114 @@
+#first {
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    margin: 5% 0;
+    align-items: center;
+}
+
+#first>h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#back {
+    display: flex;
+    align-items: center;
+}
+
+#back>img {
+    height: 23px;
+    margin-right: 5%;
+}
+
+#back>p {
+    font-size: 1rem;
+}
+
+hr {
+    border: 1px solid #c7c7c7;
+}
+
+#second {
+    width: 100%;
+    height: 23%;
+    padding: 0 5%;
+    margin-top: 5%;
+}
+
+#backImg {
+    position: relative;
+    background-image: url(../../img/studio/studio1.jpg);
+    background-size: cover;
+    background-position: 10%;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+#backColor {
+    position: absolute;
+    background-color: black;
+    z-index: 4;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    z-index: 5;
+    color: white;
+    padding: 5%;
+}
+
+#content>p:nth-child(1) {
+    font-size: 0.7rem;
+}
+
+#content>p:nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#content>p:nth-child(5) {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+#content>p:nth-child(6) {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+#content>p:nth-child(6)>span {
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: 700;
+}
+
+#third {
+    padding: 0 5%;
+    text-align: center;
+    margin: 5% 0;
+}
+
+#hrSecond {
+    margin: 0 auto;
+    width: 90%;
+}
+
+#forth {
+    padding: 0 5%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#forth>h1 {
+    margin-bottom: 5%;
+    font-weight: 600;
+}
+
+#next {
+    width: 35%;
+}

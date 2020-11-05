@@ -13,6 +13,7 @@ public interface MainDAO {
 	Reserve getReserve(Reserve re) throws Exception;
 	List getAllReserve() throws Exception;
 	int registerCustomer(Customer cs) throws Exception;
-
+	int deleteReserve(Reserve re) throws Exception;
+	int registerReview(Reserve re) throws Exception;
 
 }

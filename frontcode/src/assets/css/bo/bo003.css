@@ -1,0 +1,17 @@
+#container {
+    background-color: grey;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+h1 {
+    width: 80%;
+    height: 13%;
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.1rem;
+    text-align: center;
+}
