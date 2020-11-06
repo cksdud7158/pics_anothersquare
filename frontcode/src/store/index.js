@@ -7,7 +7,7 @@ export default new Vuex.Store({
     state: {
         //data 를 넣는다.
         adStudioName: "줌이미지",
-        ipAddress: "localhost",
+        ipAddress: "34.64.108.6",
         user: "",
         loginCheck: false,
     },
