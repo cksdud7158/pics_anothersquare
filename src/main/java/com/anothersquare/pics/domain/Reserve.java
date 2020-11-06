@@ -5,7 +5,7 @@ public class Reserve {
 	private String date;
 	private String name;
 	private String email;
-	private String price;
+	private int price;
 	private String address;
 	private String contact;
 	private int peopleNum;
@@ -16,7 +16,7 @@ public class Reserve {
 	public Reserve() {
 	}
 
-	public Reserve(String hour, String date, String name, String email, String price, String address, String contact,
+	public Reserve(String hour, String date, String name, String email, int price, String address, String contact,
 			int peopleNum, String device, String review, int rating) {
 		super();
 		this.hour = hour;
@@ -64,11 +64,11 @@ public class Reserve {
 		this.email = email;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

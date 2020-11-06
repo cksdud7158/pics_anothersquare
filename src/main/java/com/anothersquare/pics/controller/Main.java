@@ -166,4 +166,35 @@ public class Main {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
+	@PostMapping("/reserveStudio")
+	public ResponseEntity reserveStudio(@RequestBody Map<String, Object> map) {
+		try {
+			
+			Map<String, Object> params = (Map<String, Object>) map.get("params");
+			
+			Map<String, Object> reserve = (Map<String, Object>) params.get("reserveInfo");
+			
+			System.out.println(reserve);
+			
+			Reserve re = new Reserve();
+			
+			re.setDate((String) reserve.get("date"));
+			re.setPrice((int) reserve.get("price"));
+			re.setName((String) reserve.get("name"));
+			re.setEmail((String) reserve.get("email"));
+			re.setAddress((String) reserve.get("address"));
+			re.setContact((String) reserve.get("contact"));
+			re.setPeopleNum((int) Integer.parseInt((String) reserve.get("peopleNum")));
+			re.setDevice((String) reserve.get("device"));
+			re.setHour((String) reserve.get("hour"));
+			
+			
+			mainService.reserveStudio(re);
+	
+			return new ResponseEntity(HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
 }

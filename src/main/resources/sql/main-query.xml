@@ -41,4 +41,10 @@
 	UPDATE reserve SET review = #{review}, rating=#{rating} WHERE name = #{name} and date=#{date};
 	</update>
 	
+	
+	<insert id="reserveStudio" parameterType="reserve">							
+		INSERT INTO reserve( hour, date, name, email, price, address, contact, peopleNum, device) 
+		VALUES (#{hour},#{date}, #{name}, #{email}, #{price}, #{address}, #{contact}, #{peopleNum}, #{device});
+	</insert>
+	
 </mapper>

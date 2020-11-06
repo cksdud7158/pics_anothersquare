@@ -58,6 +58,11 @@ public class MainDAOImpl  implements MainDAO{
 	public int registerReview(Reserve re) throws Exception {
 		return session.update(ns+"registerReview", re);
 	}
+
+	@Override
+	public int reserveStudio(Reserve re) throws Exception {
+		return session.insert(ns+"reserveStudio",re);
+	}
 	
 	
 	

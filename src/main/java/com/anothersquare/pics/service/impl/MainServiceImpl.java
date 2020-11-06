@@ -56,6 +56,11 @@ public class MainServiceImpl implements MainService{
 	public int registerReview(Reserve re) throws Exception {
 		return mainDAO.registerReview(re);
 	}
+
+	@Override
+	public int reserveStudio(Reserve re) throws Exception {
+		return mainDAO.reserveStudio(re);
+	}
 		
 
 
