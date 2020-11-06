@@ -39,10 +39,18 @@ export default {
             this.$router.push("/fi001/" + this.$store.state.adStudioName);
         },
         toReserve() {
-            this.$router.push("/pa001/");
+            this.loginCheckMethood();
         },
         toVR() {
             this.$router.push("/fi002/");
+        },
+        loginCheckMethood() {
+            console.log(this.$store.state.loginCheck);
+            if (this.$store.state.loginCheck == false) {
+                this.$router.push("/me001_1");
+            } else {
+                this.$router.push("/pa001/");
+            }
         },
     },
 };

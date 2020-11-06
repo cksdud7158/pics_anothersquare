@@ -29,9 +29,55 @@ export default {
             return wHeight + "px";
         },
         filterStudios() {
-            // console.log();
+            // for (let i = 0; i < this.studios.length; i++) {
+            //     if (this.studios[i].name.match(this.condition.searchWord)) {
+            //         if (this.condition.district == this.studios[i].name.split(" ")[1]) {
+            //             if (this.condition.area1 <= this.studios[i].area) {
+            //                 if (this.condition.area2 >= this.studios[i].area) {
+            //                     if (this.condition.price1 <= this.studios[i].price) {
+            //                         if (this.condition.price2 >= this.studios[i].price) {
+            //                             if (
+            //                                 this.condition.peopleNum <= this.studios[i].capacityPeople
+            //                             ) {
+            //                                 if (this.condition.hashTag != null) {
+            //                                     let tagList = this.condition.hashTag.split("#");
+            //                                     for (let j = 0; j < tagList.length; i++) {
+            //                                         if (tagList[j] == this.studios[i].tag1) {
+            //                                             this.temp.unshift(this.studios[i]);
+            //                                         }
+            //                                         if (tagList[j] == this.studios[i].tag2) {
+            //                                             this.temp.unshift(this.studios[i]);
+            //                                         }
+            //                                         if (tagList[j] == this.studios[i].tag3) {
+            //                                             this.temp.unshift(this.studios[i]);
+            //                                         }
+            //                                     }
+            //                                 } else {
+            //                                     this.temp.unshift(this.studios[i]);
+            //                                 }
+            //                             } else {
+            //                                 this.temp.unshift(this.studios[i]);
+            //                             }
+            //                         } else {
+            //                             this.temp.unshift(this.studios[i]);
+            //                         }
+            //                     } else {
+            //                         this.temp.unshift(this.studios[i]);
+            //                     }
+            //                 } else {
+            //                     this.temp.unshift(this.studios[i]);
+            //                 }
+            //             } else {
+            //                 this.temp.unshift(this.studios[i]);
+            //             }
+            //         } else {
+            //             this.temp.unshift(this.studios[i]);
+            //         }
+            //     }
+            // }
+
             for (let i = 0; i < this.studios.length; i++) {
-                if (this.condition.searchWord == this.studios[i].name) {
+                if (this.studios[i].name.match(this.condition.searchWord)) {
                     if (this.condition.district == this.studios[i].name.split(" ")[1]) {
                         if (this.condition.area1 <= this.studios[i].area) {
                             if (this.condition.area2 >= this.studios[i].area) {
@@ -44,13 +90,13 @@ export default {
                                                 let tagList = this.condition.hashTag.split("#");
                                                 for (let j = 0; j < tagList.length; i++) {
                                                     if (tagList[j] == this.studios[i].tag1) {
-                                                        this.temp.unshift(this.studios[i]);
+                                                        this.temp.push(this.studios[i]);
                                                     }
                                                     if (tagList[j] == this.studios[i].tag2) {
-                                                        this.temp.unshift(this.studios[i]);
+                                                        this.temp.push(this.studios[i]);
                                                     }
                                                     if (tagList[j] == this.studios[i].tag3) {
-                                                        this.temp.unshift(this.studios[i]);
+                                                        this.temp.push(this.studios[i]);
                                                     }
                                                 }
                                             } else {
@@ -74,10 +120,16 @@ export default {
                     } else {
                         this.temp.unshift(this.studios[i]);
                     }
+                } else {
+                    this.temp.push(this.studios[i]);
                 }
             }
+
             this.studios = [];
             this.studios = this.temp;
+            for (let j in this.studios) {
+                console.log("검색 결과::" + this.studios[j].name);
+            }
         },
         callAllReserve() {
             this.$axios

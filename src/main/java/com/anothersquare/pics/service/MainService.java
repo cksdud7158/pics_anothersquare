@@ -15,4 +15,6 @@ public interface MainService {
 	int registerCustomer(Customer cs) throws Exception;
 	int deleteReserve(Reserve re) throws Exception;
 	int registerReview(Reserve re) throws Exception;
+	int reserveStudio(Reserve re) throws Exception;
+
 }

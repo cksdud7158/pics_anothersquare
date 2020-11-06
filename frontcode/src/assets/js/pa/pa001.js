@@ -25,6 +25,7 @@ export default {
                 selectedTime: "",
                 selectedDevice: "",
             },
+            toDay: "",
         };
     },
     beforeMount() {
@@ -34,6 +35,7 @@ export default {
         var day = ("0" + date.getDate()).slice(-2);
 
         this.dateInfo = year + "-" + month + "-" + day;
+        this.toDay = year + "-" + month + "-" + day;
     },
     mounted() {
         this.studio = JSON.parse(sessionStorage.getItem("studio"));

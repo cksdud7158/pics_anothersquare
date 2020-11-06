@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Ma002 from "@/components/ma/ma002.vue";
 import Me001 from "@/components/me/me001.vue";
+import Me001_1 from "@/components/me/me001_1.vue";
 import Me002 from "@/components/me/me002.vue";
 import Me003 from "@/components/me/me003.vue";
 import Me004 from "@/components/me/me004.vue";
@@ -38,6 +39,10 @@ const routes = [{
     path: "/me001",
     name: "me001",
     component: Me001,
+}, {
+    path: "/me001_1",
+    name: "me001_1",
+    component: Me001_1,
 }, {
     path: "/me002",
     name: "me002",
