@@ -198,9 +198,4 @@ public class Main {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
-	@GetMapping("/error")
-	public String handleError() {
-		return "index.html";
-	}
 }
