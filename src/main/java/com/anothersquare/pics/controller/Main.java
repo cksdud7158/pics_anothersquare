@@ -199,7 +199,7 @@ public class Main {
 		}
 	}
 	
-	@RequestMapping("/error")
+	@GetMapping("/error")
 	public String handleError() {
 		return "index.html";
 	}
