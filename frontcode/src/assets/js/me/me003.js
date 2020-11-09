@@ -4,20 +4,29 @@ export default {
             checkbox1: false,
             checkbox2: false,
             email: "",
-            emailRules: {
-                required: (v) => !!v || "E-mail is required",
-                form: (v) => /.+@.+/.test(v) || "E-mail must be valid",
-            },
             password: "",
             show1: false,
-            rules: {
-                required: (value) => !!value || "Required.",
-                min: (v) => v.length >= 8 || "Min 8 characters",
-            },
             name: "",
             contact: "",
             allCheck: false,
+            length: "",
+            emails: "",
         };
+    },
+    mounted() {
+        this.$axios
+            .get("http://" + this.$store.state.ipAddress + ":7777/register")
+            .then((response) => {
+                this.emails = response.data;
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                this.errored = true;
+            })
+            .finally(() => {
+                this.loading = false;
+            });
     },
     updated() {
         if (
@@ -25,9 +34,15 @@ export default {
             this.password != "" &&
             this.name != "" &&
             this.contact != "" &&
-            (this.checkbox1 == true || this.checkbox2 == true)
+            this.required() == true &&
+            this.emailForm() == true &&
+            this.minimumNum() == true &&
+            this.checkboxReturn() &&
+            this.checkDuplicate() == true
         ) {
             this.allCheck = true;
+        } else {
+            this.allCheck = false;
         }
     },
     computed: {
@@ -37,12 +52,13 @@ export default {
         },
     },
     methods: {
-        checkDuplicate(val) {
-            // write your api call and return the below statement if it already exist
-            if (val == "test") {
-                return `Name "${val}" already exist`;
-            } else {
-                return true;
+        checkDuplicate() {
+            for (let i in this.emails) {
+                if (this.email == this.emails[i]) {
+                    return "Name already exist";
+                } else {
+                    return true;
+                }
             }
         },
         next() {
@@ -76,6 +92,37 @@ export default {
                 .finally(() => {
                     this.loading = false;
                 });
+        },
+        required() {
+            if (this.email == "") {
+                return "필수 입력 항목입니다.";
+            } else {
+                return true;
+            }
+        },
+        emailForm() {
+            if (/.+@.+/.test(this.email)) {
+                console.log("형식 맞음");
+                return true;
+            } else {
+                return "형식이 맞지않습니다.";
+            }
+        },
+        minimumNum() {
+            if (this.password.length >= 8) {
+                return true;
+            } else {
+                return "8자리 이상 입력해주세요";
+            }
+        },
+        checkboxReturn() {
+            if (this.checkbox1 == true && this.checkbox2 == false) {
+                return true;
+            } else if (this.checkbox1 == false && this.checkbox2 == true) {
+                return true;
+            } else if (this.checkbox1 == true && this.checkbox2 == true) {
+                return false;
+            }
         },
     },
 };

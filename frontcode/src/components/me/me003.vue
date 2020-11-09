@@ -6,7 +6,7 @@
       <div id="email">
         <v-text-field
           v-model="email"
-          :rules="[checkDuplicate, emailRules.required, emailRules.form]"
+          :rules="[checkDuplicate, required, emailForm]"
           label="E-mail"
         ></v-text-field>
       </div>
@@ -16,9 +16,9 @@
           :type="show1 ? 'text' : 'password'"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
           label="password"
-          counter="10"
+          counter
           @click:append="show1 = !show1"
-          :rules="[rules.required, rules.min]"
+          :rules="[required, minimumNum]"
           hint="At least 8 characters"
         ></v-text-field>
       </div>
@@ -31,6 +31,7 @@
           label="contact"
           counter
           append-icon="mdi-cellphone"
+          :rules="[required]"
         ></v-text-field>
       </div>
       <div id="gender">
@@ -57,10 +58,10 @@
     <div id="next">
       <img
         src="@/assets/img/me/me003_1.png"
-        v-show="allCheck"
+        v-if="allCheck"
         @click.prevent="next"
       />
-      <img src="@/assets/img/me/me003_2.png" v-show="!allCheck" />
+      <img src="@/assets/img/me/me003_2.png" v-if="!allCheck" />
     </div>
   </div>
 </template>
