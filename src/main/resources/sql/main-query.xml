@@ -10,6 +10,10 @@
 		where email=#{value}
 	</select>
 	
+	<select id="getEmail" parameterType="string" resultType="customer">
+		SELECT email FROM customer
+	</select>
+	
 	<select id="getStudio" parameterType="string" resultType="studio">
 		select name, address, contact, price, parking, light, area, tag1, tag2, tag3, has_device, capacity_people 
 		from studio where name=#{value}

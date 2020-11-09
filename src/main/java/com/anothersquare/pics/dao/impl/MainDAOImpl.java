@@ -63,6 +63,11 @@ public class MainDAOImpl  implements MainDAO{
 	public int reserveStudio(Reserve re) throws Exception {
 		return session.insert(ns+"reserveStudio",re);
 	}
+
+	@Override
+	public List getEmail(String email) throws Exception {
+		return session.selectList(ns+"getEmail",email);
+	}
 	
 	
 	

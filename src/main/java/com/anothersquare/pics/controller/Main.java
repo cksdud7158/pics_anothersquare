@@ -198,4 +198,17 @@ public class Main {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@GetMapping("/email")
+	public ResponseEntity getEmail() {
+		try {
+			
+			List list = mainService.getEmail("");
+			
+			return new ResponseEntity(list,HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}
+	}
 }

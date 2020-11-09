@@ -61,6 +61,11 @@ public class MainServiceImpl implements MainService{
 	public int reserveStudio(Reserve re) throws Exception {
 		return mainDAO.reserveStudio(re);
 	}
+
+	@Override
+	public List getEmail(String email) throws Exception {
+		return mainDAO.getEmail(email);
+	}
 		
 
 

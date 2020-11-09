@@ -16,6 +16,6 @@ public interface MainDAO {
 	int deleteReserve(Reserve re) throws Exception;
 	int registerReview(Reserve re) throws Exception;
 	int reserveStudio(Reserve re) throws Exception;
-
+	List getEmail(String email) throws Exception;
 
 }
