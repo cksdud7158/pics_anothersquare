@@ -15,7 +15,7 @@ export default {
     },
     mounted() {
         this.$axios
-            .get("http://" + this.$store.state.ipAddress + ":7777/register")
+            .get("http://" + this.$store.state.ipAddress + ":7777/email")
             .then((response) => {
                 this.emails = response.data;
                 console.log(response);
@@ -54,7 +54,7 @@ export default {
     methods: {
         checkDuplicate() {
             for (let i in this.emails) {
-                if (this.email == this.emails[i]) {
+                if (this.email == this.emails[i].email) {
                     return "Name already exist";
                 } else {
                     return true;
@@ -102,7 +102,6 @@ export default {
         },
         emailForm() {
             if (/.+@.+/.test(this.email)) {
-                console.log("형식 맞음");
                 return true;
             } else {
                 return "형식이 맞지않습니다.";
