@@ -26,6 +26,7 @@ import com.anothersquare.pics.service.MainService;
 
 @RestController
 @CrossOrigin(origins= {"*"}, maxAge=6000)
+
 public class Main {
 	
 	@Autowired
@@ -36,11 +37,14 @@ public class Main {
 		try {
 			
 			Map<String, Object> params = (Map<String, Object>) map.get("params");
-			
+
 			String email=(String) params.get("email");
 			Customer cust = mainService.loginCustomer(email);
+//			System.out.println(cust);
 	
 			return new ResponseEntity(cust,HttpStatus.OK);
+//			return new ResponseEntity(HttpStatus.OK);
+
 		
 		} catch (Exception e) {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
