@@ -58,6 +58,7 @@ export default {
           return "Name already exist";
         }
       }
+      return true;
     },
     next() {
       var registerInfo = {};
