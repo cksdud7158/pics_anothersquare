@@ -41,7 +41,15 @@ export default {
       }
     },
     goReserve() {
-      this.$router.push("/pa001");
+      this.loginCheckMethood();
+    },
+    loginCheckMethood() {
+      console.log(this.$store.state.loginCheck);
+      if (this.$store.state.loginCheck == false) {
+        this.$router.push("/me001_1");
+      } else {
+        this.$router.push("/pa001/");
+      }
     },
   },
 };
