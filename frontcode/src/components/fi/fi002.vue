@@ -23,7 +23,6 @@
       allowfullscreen
       allow="xr-spatial-tracking"
     ></iframe>
-
     <div id="third">
       <img src="@/assets/img/fi/fi002_10.png" @click="showVR(1)" />
       <img src="@/assets/img/fi/fi002_12.png" @click="showVR(2)" />
