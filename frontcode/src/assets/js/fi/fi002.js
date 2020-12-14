@@ -3,10 +3,17 @@ export default {
     return {
       studio: "",
       VRLink: "https://my.matterport.com/show/?m=cVA8ESKKouc",
+      show1: true,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
     };
   },
   mounted() {
-    this.studio = JSON.parse(sessionStorage.getItem("studio"));
+    if (JSON.parse(sessionStorage.getItem("studio")) != null) {
+      this.studio = JSON.parse(sessionStorage.getItem("studio"));
+    }
   },
   computed: {
     wHeight() {
@@ -21,22 +28,22 @@ export default {
     showVR(i) {
       switch (i) {
         case 1:
-          this.VRLink = "https://my.matterport.com/show/?m=cVA8ESKKouc";
+          this.VRLink = "https://my.matterport.com/show/?m=cVA8ESKKouc&mls=1";
           break;
         case 2:
-          this.VRLink = "https://my.matterport.com/show/?m=riW2natWs9W";
+          this.VRLink = "https://my.matterport.com/show/?m=CRQdvvbXR76&mls=1";
           break;
         case 3:
-          this.VRLink = "https://my.matterport.com/show/?m=riW2natWs9W";
+          this.VRLink = "https://my.matterport.com/show/?m=riW2natWs9W&mls=1";
           break;
         case 4:
-          this.VRLink = "https://my.matterport.com/show/?m=E74WWkd5R7K";
+          this.VRLink = "https://my.matterport.com/show/?m=E74WWkd5R7K&mls=1";
           break;
         case 5:
-          this.VRLink = "https://my.matterport.com/show/?m=dqMjU7ywEcb";
+          this.VRLink = "https://my.matterport.com/show/?m=dqMjU7ywEcb&mls=1";
           break;
         default:
-          this.VRLink = "https://my.matterport.com/show/?m=WTn7TVqeeEm&back=1";
+          this.VRLink = "https://my.matterport.com/show/?m=cVA8ESKKouc&mls=1";
           break;
       }
     },
