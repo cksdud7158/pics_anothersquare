@@ -3,11 +3,6 @@ export default {
     return {
       studio: "",
       VRLink: "https://my.matterport.com/show/?m=cVA8ESKKouc",
-      show1: true,
-      show2: false,
-      show3: false,
-      show4: false,
-      show5: false,
     };
   },
   mounted() {

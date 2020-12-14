@@ -34,7 +34,6 @@ export default {
     var year = date.getFullYear();
     var month = ("0" + (1 + date.getMonth())).slice(-2);
     var day = ("0" + date.getDate()).slice(-2);
-
     this.dateInfo = year + "-" + month + "-" + day;
     this.toDay = year + "-" + month + "-" + day;
   },
@@ -43,6 +42,7 @@ export default {
     this.hasDevice = this.studio.hasDevice.split(",");
     this.handler();
     this.swipeLisner_home();
+    this.callScheule();
   },
   updated() {},
   computed: {
