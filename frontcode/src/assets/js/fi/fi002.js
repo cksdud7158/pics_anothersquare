@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.push("/bo001");
+      this.$router.push("/fi001");
     },
     showVR(i) {
       switch (i) {
